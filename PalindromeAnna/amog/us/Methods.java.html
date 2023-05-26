@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>Methods.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Methods.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">amog.us</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+<span class="s0">public class </span><span class="s1">Methods {</span>
+
+
+
+
+
+    <span class="s0">static </span><span class="s1">String unify(String Phrase){</span>
+        <span class="s2">//Phrase: The phrase that is put into lowercase and has spaces removed</span>
+
+
+
+        <span class="s1">String PhraseLow = Phrase.toLowerCase()</span><span class="s0">;</span>
+
+        <span class="s2">//makes char[] array for swapping characters</span>
+        <span class="s0">char</span><span class="s1">[] PalinTest = PhraseLow.toCharArray()</span><span class="s0">;</span>
+
+        <span class="s2">//String to add letters to</span>
+        <span class="s1">String same = </span><span class="s3">&quot;&quot;</span><span class="s0">;</span>
+        <span class="s2">//adds letters without spaces</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; PalinTest.length</span><span class="s0">; </span><span class="s1">++i) {</span>
+            <span class="s2">//sees if Palin test is not a space</span>
+            <span class="s0">if </span><span class="s1">(PalinTest[i] != </span><span class="s3">' '</span><span class="s1">){</span>
+                <span class="s0">int </span><span class="s1">ASNUM = (</span><span class="s0">int</span><span class="s1">)PalinTest[i]</span><span class="s0">;</span>
+
+                <span class="s1">same +=(</span><span class="s0">char</span><span class="s1">)ASNUM</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s2">//returns the unified message</span>
+        <span class="s0">return </span><span class="s1">same</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">static </span><span class="s1">String PalinFinder(String Phrase){</span>
+        <span class="s2">//Phrase: The phrase tested to see if it is a palindrome or not</span>
+
+
+
+        <span class="s1">String PhraseLow = Phrase.toLowerCase()</span><span class="s0">;</span>
+
+        <span class="s2">//makes char[] array for swapping characters</span>
+        <span class="s0">char</span><span class="s1">[] PalinTest = PhraseLow.toCharArray()</span><span class="s0">;</span>
+
+        <span class="s2">//String to add letters to</span>
+        <span class="s1">String same = </span><span class="s3">&quot;&quot;</span><span class="s0">;</span>
+        <span class="s2">//adds letters without spaces</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; PalinTest.length</span><span class="s0">; </span><span class="s1">++i) {</span>
+            <span class="s2">//sees if PalinTest is not a space</span>
+            <span class="s0">if </span><span class="s1">(PalinTest[i] != </span><span class="s3">' '</span><span class="s1">){</span>
+                <span class="s0">int </span><span class="s1">ASNUM = (</span><span class="s0">int</span><span class="s1">)PalinTest[i]</span><span class="s0">;</span>
+
+                <span class="s1">same +=(</span><span class="s0">char</span><span class="s1">)ASNUM</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s2">//reverses the phrase using the characters from &quot;same&quot; and a StringBuilder</span>
+        <span class="s1">String sameR = </span><span class="s0">new </span><span class="s1">StringBuilder(</span><span class="s0">new </span><span class="s1">String(same)).reverse().toString()</span><span class="s0">;</span>
+
+        <span class="s2">//sees if sameR is a palindrome</span>
+        <span class="s0">if</span><span class="s1">(sameR.equals(same)){</span>
+            <span class="s2">//tells user it is and prints phrase and phrase backwards</span>
+            <span class="s1">System.out.println(Phrase + </span><span class="s3">&quot; is a palindrome!&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(sameR)</span><span class="s0">;</span>
+
+        <span class="s1">}</span>
+        <span class="s0">else if</span><span class="s1">(!sameR.equals(same)){</span>
+            <span class="s2">//tells user it isn't and prints phrase and phrase backwards</span>
+            <span class="s1">System.out.println(Phrase + </span><span class="s3">&quot; is not a palindrome!&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(sameR)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">else</span><span class="s1">{</span>
+            <span class="s2">//???</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;How did you even get this error?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">return </span><span class="s1">sameR</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">static </span><span class="s1">String PalinFinderInput(){</span>
+        <span class="s2">//Phrase: The phrase tested to see if it is a palindrome or not</span>
+        <span class="s1">Scanner input = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input Phrase to test for palindrome.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">String Phrase = input.nextLine()</span><span class="s0">;</span>
+
+        <span class="s1">String PhraseLow = Phrase.toLowerCase()</span><span class="s0">;</span>
+
+        <span class="s2">//makes char[] array for swapping characters</span>
+        <span class="s0">char</span><span class="s1">[] PalinTest = PhraseLow.toCharArray()</span><span class="s0">;</span>
+
+        <span class="s2">//String to add letters to</span>
+        <span class="s1">String same = </span><span class="s3">&quot;&quot;</span><span class="s0">;</span>
+        <span class="s2">//adds letters without spaces</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; PalinTest.length</span><span class="s0">; </span><span class="s1">++i) {</span>
+            <span class="s2">//sees if PalinTest is not a space</span>
+            <span class="s0">if </span><span class="s1">(PalinTest[i] != </span><span class="s3">' '</span><span class="s1">){</span>
+                <span class="s0">int </span><span class="s1">ASNUM = (</span><span class="s0">int</span><span class="s1">)PalinTest[i]</span><span class="s0">;</span>
+
+                <span class="s1">same +=(</span><span class="s0">char</span><span class="s1">)ASNUM</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s2">//reverses the phrase using the characters from &quot;same&quot; and a StringBuilder</span>
+        <span class="s1">String sameR = </span><span class="s0">new </span><span class="s1">StringBuilder(</span><span class="s0">new </span><span class="s1">String(same)).reverse().toString()</span><span class="s0">;</span>
+
+        <span class="s2">//sees if sameR is a palindrome</span>
+        <span class="s0">if</span><span class="s1">(sameR.equals(same)){</span>
+            <span class="s2">//tells user it is and prints phrase and phrase backwards</span>
+            <span class="s1">System.out.println(Phrase + </span><span class="s3">&quot; is a palindrome!&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(sameR)</span><span class="s0">;</span>
+
+        <span class="s1">}</span>
+        <span class="s0">else if</span><span class="s1">(!sameR.equals(same)){</span>
+            <span class="s2">//tells user it isn't and prints phrase and phrase backwards</span>
+            <span class="s1">System.out.println(Phrase + </span><span class="s3">&quot; is not a palindrome!&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(sameR)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">else</span><span class="s1">{</span>
+            <span class="s2">//???</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;How did you even get this error?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">return </span><span class="s1">sameR</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">static </span><span class="s1">String unifyInput(){</span>
+        <span class="s2">//Phrase: The phrase that is put into lowercase and has spaces removed</span>
+
+        <span class="s1">Scanner input = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input Phrase to unify.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">String Phrase = input.nextLine()</span><span class="s0">;</span>
+
+
+        <span class="s1">String PhraseLow = Phrase.toLowerCase()</span><span class="s0">;</span>
+
+        <span class="s2">//makes char[] array for swapping characters</span>
+        <span class="s0">char</span><span class="s1">[] PalinTest = PhraseLow.toCharArray()</span><span class="s0">;</span>
+
+        <span class="s2">//String to add letters to</span>
+        <span class="s1">String same = </span><span class="s3">&quot;&quot;</span><span class="s0">;</span>
+        <span class="s2">//adds letters without spaces</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; PalinTest.length</span><span class="s0">; </span><span class="s1">++i) {</span>
+            <span class="s2">//sees if Palin test is not a space</span>
+            <span class="s0">if </span><span class="s1">(PalinTest[i] != </span><span class="s3">' '</span><span class="s1">){</span>
+                <span class="s0">int </span><span class="s1">ASNUM = (</span><span class="s0">int</span><span class="s1">)PalinTest[i]</span><span class="s0">;</span>
+
+                <span class="s1">same +=(</span><span class="s0">char</span><span class="s1">)ASNUM</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s2">//returns the unified message</span>
+        <span class="s0">return </span><span class="s1">same</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

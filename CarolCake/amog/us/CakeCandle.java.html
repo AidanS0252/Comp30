@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>CakeCandle.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #cc7832;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CakeCandle.java</font>
+</center></td></tr></table>
+<pre>
+
+<span class="s1">package </span><span class="s0">amog.us</span><span class="s1">;</span>
+
+<span class="s1">import </span><span class="s0">java.util.Random</span><span class="s1">;</span>
+
+<span class="s1">public class </span><span class="s0">CakeCandle {</span>
+
+<span class="s1">public static void </span><span class="s0">Candle(</span><span class="s1">int </span><span class="s0">duration){</span>
+    <span class="s1">boolean </span><span class="s0">loop = </span><span class="s1">true;</span>
+
+
+    <span class="s2">//sets locations</span>
+    <span class="s0">Random rand = </span><span class="s1">new </span><span class="s0">Random()</span><span class="s1">;</span>
+    <span class="s1">for </span><span class="s0">(</span><span class="s1">int </span><span class="s0">i = </span><span class="s3">0</span><span class="s1">; </span><span class="s0">i &lt; duration</span><span class="s1">; </span><span class="s0">i++) {</span>
+        <span class="s1">int </span><span class="s0">cand1 = </span><span class="s3">0</span><span class="s1">;</span>
+        <span class="s1">int </span><span class="s0">cand2 = </span><span class="s3">0</span><span class="s1">;</span>
+        <span class="s1">int </span><span class="s0">cut = </span><span class="s3">0</span><span class="s1">;</span>
+
+        <span class="s2">//loops to make sure the candles are not in the same spot</span>
+        <span class="s1">while </span><span class="s0">(cand1 == cand2) {</span>
+            <span class="s2">//generates number for first candle</span>
+            <span class="s0">cand1 =  rand.nextInt(</span><span class="s3">100 </span><span class="s0">+ </span><span class="s3">1 </span><span class="s0">- </span><span class="s3">1</span><span class="s0">) + </span><span class="s3">1</span><span class="s1">;</span>
+
+            <span class="s2">//generates number for second candle</span>
+            <span class="s0">cand2 = rand.nextInt(</span><span class="s3">100 </span><span class="s0">+ </span><span class="s3">1 </span><span class="s0">- </span><span class="s3">1</span><span class="s0">) + </span><span class="s3">1</span><span class="s1">;</span>
+
+        <span class="s0">}</span>
+
+        <span class="s2">//generates number for cut</span>
+        <span class="s0">cut = rand.nextInt(</span><span class="s3">100 </span><span class="s0">+ </span><span class="s3">1 </span><span class="s0">- </span><span class="s3">1</span><span class="s0">) + </span><span class="s3">1</span><span class="s1">;</span>
+
+        <span class="s2">//sees if cut is between cand1 and cand2</span>
+        <span class="s1">if</span><span class="s0">(cut&gt;cand1 &amp;&amp; cut&lt;cand2){</span>
+            <span class="s0">System.out.println(</span><span class="s4">&quot;Cut is between both candles.&quot;</span><span class="s0">)</span><span class="s1">;</span>
+
+
+
+        <span class="s0">}</span>
+
+        <span class="s2">//sees if cut is between cand1 and cand2</span>
+        <span class="s1">else if</span><span class="s0">(cut&gt;cand2 &amp;&amp; cut&lt;cand2){</span>
+            <span class="s0">System.out.println(</span><span class="s4">&quot;Cut is between both candles.&quot;</span><span class="s0">)</span><span class="s1">;</span>
+
+
+        <span class="s0">}</span>
+        <span class="s1">else</span><span class="s0">{</span>
+
+
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+
+<span class="s0">}</span>
+
+    <span class="s2">//runs candle and also displays very very very rough chances of cut being between candles</span>
+    <span class="s1">public static void </span><span class="s0">CandleChance(</span><span class="s1">int </span><span class="s0">duration){</span>
+
+        <span class="s1">int </span><span class="s0">chance = </span><span class="s3">0</span><span class="s1">;</span>
+        <span class="s1">int </span><span class="s0">denominator = </span><span class="s3">0</span><span class="s1">;</span>
+
+        <span class="s2">//sets  locations</span>
+        <span class="s0">Random rand = </span><span class="s1">new </span><span class="s0">Random()</span><span class="s1">;</span>
+        <span class="s1">for </span><span class="s0">(</span><span class="s1">int </span><span class="s0">i = </span><span class="s3">0</span><span class="s1">; </span><span class="s0">i &lt; duration</span><span class="s1">; </span><span class="s0">i++) {</span>
+
+         <span class="s0">{</span>
+
+            <span class="s1">int </span><span class="s0">cand1 = </span><span class="s3">0</span><span class="s1">;</span>
+            <span class="s1">int </span><span class="s0">cand2 = </span><span class="s3">0</span><span class="s1">;</span>
+            <span class="s1">int </span><span class="s0">cut = </span><span class="s3">0</span><span class="s1">;</span>
+
+            <span class="s2">//loops to make sure the candles are not in the same spot</span>
+            <span class="s1">while </span><span class="s0">(cand1 == cand2) {</span>
+                <span class="s2">//generates number for first candle</span>
+                <span class="s0">cand1 =  rand.nextInt(</span><span class="s3">100 </span><span class="s0">+ </span><span class="s3">1 </span><span class="s0">- </span><span class="s3">1</span><span class="s0">) + </span><span class="s3">1</span><span class="s1">;</span>
+
+                <span class="s2">//generates number for second candle</span>
+                <span class="s0">cand2 = rand.nextInt(</span><span class="s3">100 </span><span class="s0">+ </span><span class="s3">1 </span><span class="s0">- </span><span class="s3">1</span><span class="s0">) + </span><span class="s3">1</span><span class="s1">;</span>
+
+            <span class="s0">}</span>
+
+             <span class="s2">//generates number for cut</span>
+            <span class="s0">cut = rand.nextInt(</span><span class="s3">100 </span><span class="s0">+ </span><span class="s3">1 </span><span class="s0">- </span><span class="s3">1</span><span class="s0">) + </span><span class="s3">1</span><span class="s1">;</span>
+
+            <span class="s2">//sees if cut is between cand1 and cand2</span>
+             <span class="s1">if</span><span class="s0">(cut&gt;cand1 &amp;&amp; cut&lt;cand2){</span>
+                <span class="s0">System.out.println(</span><span class="s4">&quot;Cut is between both candles.&quot;</span><span class="s0">)</span><span class="s1">;</span>
+                <span class="s0">chance += </span><span class="s3">1</span><span class="s1">;</span>
+                <span class="s0">denominator +=</span><span class="s3">1</span><span class="s1">;</span>
+                <span class="s0">System.out.println(</span><span class="s4">&quot;Cuts between &quot; </span><span class="s0">+ chance)</span><span class="s1">;</span>
+            <span class="s0">}</span>
+            <span class="s2">//sees if cut is between cand1 and cand2</span>
+            <span class="s1">else if</span><span class="s0">(cut&gt;cand2 &amp;&amp; cut&lt;cand2){</span>
+                <span class="s0">System.out.println(</span><span class="s4">&quot;Cut is between both candles.&quot;</span><span class="s0">)</span><span class="s1">;</span>
+                <span class="s0">chance += </span><span class="s3">1</span><span class="s1">;</span>
+                <span class="s0">denominator +=</span><span class="s3">1</span><span class="s1">;</span>
+                <span class="s0">System.out.println(</span><span class="s4">&quot;Cuts between &quot; </span><span class="s0">+ chance)</span><span class="s1">;</span>
+            <span class="s0">}</span>
+            <span class="s1">else</span><span class="s0">{</span>
+
+                <span class="s0">denominator +=</span><span class="s3">1</span><span class="s1">;</span>
+
+            <span class="s0">}</span>
+
+        <span class="s0">}}</span>
+        <span class="s2">//gives very very rough chances of cut being between candles.</span>
+        <span class="s0">System.out.println(</span><span class="s4">&quot;Chances of cut being between candles is around &quot; </span><span class="s0">+ chance + </span><span class="s4">&quot;/&quot; </span><span class="s0">+ denominator)</span><span class="s1">;</span>
+
+    <span class="s0">}</span>
+
+<span class="s0">}</span>
+</pre>
+</body>
+</html>

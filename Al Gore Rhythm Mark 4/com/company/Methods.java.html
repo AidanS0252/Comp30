@@ -1,0 +1,229 @@
+<html>
+<head>
+<title>Methods.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Methods.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.company</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+<span class="s0">public class </span><span class="s1">Methods {</span>
+
+
+    <span class="s0">static void </span><span class="s1">LineBreak(){</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s0">static int</span><span class="s1">[] swap(</span><span class="s0">int</span><span class="s1">[] array</span><span class="s0">, int </span><span class="s1">number1</span><span class="s0">,int </span><span class="s1">number2){</span>
+
+        <span class="s3">//Makes a temporary integer that is equal to first entry</span>
+        <span class="s0">int </span><span class="s1">Pholder = array[number1]</span><span class="s0">;</span>
+        <span class="s3">//Changes the entries to be the same</span>
+        <span class="s1">array[number1] = array[number2]</span><span class="s0">;</span>
+        <span class="s3">//Changes the second entry to be the first</span>
+        <span class="s1">array[number2] = Pholder</span><span class="s0">;</span>
+
+        <span class="s0">return </span><span class="s1">array</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s0">static void </span><span class="s1">displayArrayInt(</span><span class="s0">int</span><span class="s1">[] array) {</span>
+        <span class="s3">//Makes brackets to make it look nice</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot;(&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s3">//makes sure whole array is printed</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; array.length</span><span class="s0">; </span><span class="s1">i++) {</span>
+           <span class="s3">//prints array and a space</span>
+            <span class="s1">System.out.print(array[i] + </span><span class="s2">&quot;, &quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">}</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+    <span class="s0">static void </span><span class="s1">displayArrayString(String[] array) {</span>
+        <span class="s3">//Makes brackets to make it look nice</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot;(&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s3">//makes sure whole array is printed</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; array.length</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s3">//prints array and a space</span>
+            <span class="s1">System.out.print(array[i] + </span><span class="s2">&quot;, &quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s1">}</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;)&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+    <span class="s0">static int</span><span class="s1">[] BubbleSort(</span><span class="s0">int</span><span class="s1">[] unsorted){</span>
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Sorting&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">boolean </span><span class="s1">sorted =</span><span class="s0">false;</span>
+        <span class="s0">while</span><span class="s1">(!sorted) {</span>
+
+            <span class="s1">sorted = </span><span class="s0">true;</span>
+            <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; unsorted.length - </span><span class="s4">1</span><span class="s0">; </span><span class="s1">i++) {</span>
+
+                <span class="s0">if </span><span class="s1">(unsorted[i] &gt; unsorted[i + </span><span class="s4">1</span><span class="s1">]) {</span>
+                    <span class="s1">unsorted = swap(unsorted</span><span class="s0">, </span><span class="s1">i</span><span class="s0">, </span><span class="s1">i + </span><span class="s4">1</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">sorted =</span><span class="s0">false;</span>
+                    <span class="s1">System.out.print(</span><span class="s2">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+       <span class="s0">return </span><span class="s1">unsorted</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s0">static int</span><span class="s1">[] SelectionSort(</span><span class="s0">int</span><span class="s1">[] unsorted){</span>
+
+    <span class="s1">System.out.print(</span><span class="s2">&quot;Sorted&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; unsorted.length-</span><span class="s4">1</span><span class="s0">; </span><span class="s1">i++)</span>
+        <span class="s1">{</span>
+            <span class="s3">//sets mininum variable for swapping</span>
+            <span class="s0">int </span><span class="s1">mininum = i</span><span class="s0">;</span>
+           <span class="s3">//loops and swaps until done sorting</span>
+            <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">j = i+</span><span class="s4">1</span><span class="s0">; </span><span class="s1">j &lt; unsorted.length</span><span class="s0">; </span><span class="s1">j++)</span>
+               <span class="s3">//sees if something is smaller than mininum and swaps them</span>
+                <span class="s0">if </span><span class="s1">(unsorted[j] &lt; unsorted[mininum])</span>
+                    <span class="s1">mininum = j</span><span class="s0">;</span>
+
+            <span class="s3">//swaps the current mininum and i</span>
+            <span class="s1">unsorted = swap(unsorted</span><span class="s0">, </span><span class="s1">mininum</span><span class="s0">,</span><span class="s1">i)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+
+    <span class="s0">return </span><span class="s1">unsorted</span><span class="s0">;</span>
+<span class="s1">}</span>
+
+
+    <span class="s0">static int</span><span class="s1">[] InsertionSort(</span><span class="s0">int</span><span class="s1">[] unsorted) {</span>
+
+        <span class="s1">System.out.print(</span><span class="s2">&quot;Sorted&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">1</span><span class="s0">; </span><span class="s1">i &lt; unsorted.length</span><span class="s0">; </span><span class="s1">++i) {</span>
+            <span class="s3">//sets variable for loops and swaps</span>
+            <span class="s0">int </span><span class="s1">a = unsorted[i]</span><span class="s0">;</span>
+           <span class="s3">//sets variable for loops and swaps</span>
+            <span class="s0">int </span><span class="s1">b = i - </span><span class="s4">1</span><span class="s0">;</span>
+
+            <span class="s3">// moves elements greater than b one spot ahead</span>
+            <span class="s0">while </span><span class="s1">(b &gt;= </span><span class="s4">0 </span><span class="s1">&amp;&amp; unsorted[b] &gt; a) {</span>
+                <span class="s1">unsorted = swap(unsorted</span><span class="s0">, </span><span class="s1">b + </span><span class="s4">1</span><span class="s0">, </span><span class="s1">b)</span><span class="s0">;</span>
+                <span class="s1">b = b - </span><span class="s4">1</span><span class="s0">;</span>
+
+            <span class="s1">}</span>
+            <span class="s3">//Sets b+1 to equal a</span>
+            <span class="s1">unsorted[b + </span><span class="s4">1</span><span class="s1">] = a</span><span class="s0">;</span>
+
+        <span class="s1">}</span>
+
+
+
+
+
+
+        <span class="s0">return </span><span class="s1">unsorted</span><span class="s0">;</span><span class="s1">}</span>
+
+
+    <span class="s0">static void </span><span class="s1">searchInt(</span><span class="s0">int</span><span class="s1">[] search</span><span class="s0">, int </span><span class="s1">term){</span>
+        <span class="s0">int </span><span class="s1">elementNum = </span><span class="s4">0</span><span class="s0">;</span>
+
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; search.length</span><span class="s0">; </span><span class="s1">++i) {</span>
+
+                <span class="s0">int </span><span class="s1">a = search[i]</span><span class="s0">;</span>
+                <span class="s1">elementNum += </span><span class="s4">1</span><span class="s0">;</span>
+            <span class="s0">if </span><span class="s1">(a == term)</span>
+
+                <span class="s1">System.out.println(</span><span class="s2">&quot;There is a &quot; </span><span class="s1">+ term + </span><span class="s2">&quot; at position &quot; </span><span class="s1">+ elementNum + </span><span class="s2">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+
+        <span class="s1">}</span>
+
+
+
+
+    <span class="s1">}</span>
+    <span class="s0">static void </span><span class="s1">searchIntInput(</span><span class="s0">int</span><span class="s1">[] search){</span>
+        <span class="s0">int </span><span class="s1">elementNum = </span><span class="s4">0</span><span class="s0">;</span>
+
+        <span class="s1">Scanner intput = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Please input a int to search.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">term = intput.nextInt()</span><span class="s0">;</span>
+
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; search.length</span><span class="s0">; </span><span class="s1">++i) {</span>
+
+            <span class="s0">int </span><span class="s1">a = search[i]</span><span class="s0">;</span>
+            <span class="s1">elementNum += </span><span class="s4">1</span><span class="s0">;</span>
+            <span class="s0">if </span><span class="s1">(a == term)</span>
+
+                <span class="s1">System.out.println(</span><span class="s2">&quot;There is a &quot; </span><span class="s1">+ term + </span><span class="s2">&quot; at position &quot; </span><span class="s1">+ elementNum + </span><span class="s2">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+
+        <span class="s1">}</span>
+
+
+
+
+    <span class="s1">}</span>
+    <span class="s0">static void </span><span class="s1">searchString(String[] search</span><span class="s0">, </span><span class="s1">String term){</span>
+        <span class="s0">int </span><span class="s1">elementNum = </span><span class="s4">0</span><span class="s0">;</span>
+        <span class="s0">boolean </span><span class="s1">found = </span><span class="s0">false;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; search.length</span><span class="s0">; </span><span class="s1">++i) {</span>
+
+            <span class="s1">String a = search[i]</span><span class="s0">;</span>
+            <span class="s1">elementNum += </span><span class="s4">1</span><span class="s0">;</span>
+            <span class="s0">if </span><span class="s1">(a.equals(term))</span>
+
+                <span class="s1">System.out.println(</span><span class="s2">&quot;There is a &quot; </span><span class="s1">+ term + </span><span class="s2">&quot; at position &quot; </span><span class="s1">+ elementNum + </span><span class="s2">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+
+
+        <span class="s1">}</span>
+
+
+
+
+    <span class="s1">}</span>
+    <span class="s0">static void </span><span class="s1">searchStringInput(String[] search){</span>
+        <span class="s0">int </span><span class="s1">elementNum = </span><span class="s4">0</span><span class="s0">;</span>
+
+        <span class="s1">Scanner StringInput = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Please input a String to search.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">String term = StringInput.nextLine()</span><span class="s0">;</span>
+
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; search.length</span><span class="s0">; </span><span class="s1">++i) {</span>
+
+            <span class="s1">String a = search[i]</span><span class="s0">;</span>
+            <span class="s1">elementNum += </span><span class="s4">1</span><span class="s0">;</span>
+            <span class="s0">if </span><span class="s1">(a.equals(term))</span>
+
+                <span class="s1">System.out.println(</span><span class="s2">&quot;There is a &quot; </span><span class="s1">+ term + </span><span class="s2">&quot; at position &quot; </span><span class="s1">+ elementNum + </span><span class="s2">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+
+        <span class="s1">}</span>
+
+
+
+
+    <span class="s1">}</span>
+
+
+
+<span class="s1">}</span>
+
+
+
+</pre>
+</body>
+</html>

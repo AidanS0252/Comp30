@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Van.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Van.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">amog.us</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Van </span><span class="s0">extends </span><span class="s1">Car{</span>
+   <span class="s1">String storage</span><span class="s0">;</span>
+    <span class="s1">Van(String model</span><span class="s0">, double </span><span class="s1">mileage</span><span class="s0">, </span><span class="s1">String brand</span><span class="s0">, double </span><span class="s1">price</span><span class="s0">, double </span><span class="s1">gasMileage</span><span class="s0">, int </span><span class="s1">drive</span><span class="s0">, </span><span class="s1">String storage) {</span>
+        <span class="s0">super</span><span class="s1">(model</span><span class="s0">, </span><span class="s1">mileage</span><span class="s0">, </span><span class="s1">brand</span><span class="s0">, </span><span class="s1">price</span><span class="s0">, </span><span class="s1">gasMileage</span><span class="s0">, </span><span class="s1">drive)</span><span class="s0">;</span>
+        <span class="s0">this</span><span class="s1">.storage = storage</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s0">public void </span><span class="s1">PrintObject(){</span>
+        <span class="s1">String brand = getBrand()</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">drive = getDrive()</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">gasMileage = getGasMileage()</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">mileage = getMileage()</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">price = getPrice()</span><span class="s0">;</span>
+        <span class="s1">String model = getModel()</span><span class="s0">;</span>
+
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Model:&quot; </span><span class="s1">+ model)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Mileage:&quot; </span><span class="s1">+ mileage + </span><span class="s2">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Brand:&quot; </span><span class="s1">+ brand)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Price:&quot; </span><span class="s1">+ price)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Gas Mileage:&quot; </span><span class="s1">+ gasMileage)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(drive + </span><span class="s2">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Storage Size &quot; </span><span class="s1">+ storage)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

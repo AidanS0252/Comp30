@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>fileIO.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+fileIO.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">amog.us</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.io.*</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">fileIO {</span>
+
+    <span class="s2">//Input and output methods from text files.</span>
+
+    <span class="s0">static int</span><span class="s1">[] readFile(String filePath){</span>
+
+        <span class="s1">Scanner scanner = </span><span class="s0">null;</span>
+        <span class="s0">try </span><span class="s1">{</span>
+            <span class="s1">scanner = </span><span class="s0">new </span><span class="s1">Scanner(</span><span class="s0">new </span><span class="s1">File(filePath))</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">catch </span><span class="s1">(FileNotFoundException e) {</span>
+            <span class="s0">throw new </span><span class="s1">RuntimeException(e)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">ArrayList&lt;Integer&gt; arrayList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Integer&gt;()</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">;</span>
+
+        <span class="s0">while</span><span class="s1">(scanner.hasNextInt()){</span>
+            <span class="s1">arrayList.add(scanner.nextInt())</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s2">//Convert arrayList to int[]</span>
+
+        <span class="s0">int</span><span class="s1">[] asArray = </span><span class="s0">new int</span><span class="s1">[arrayList.size()]</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">j = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">j &lt; arrayList.size()</span><span class="s0">; </span><span class="s1">j++) {</span>
+            <span class="s1">asArray[j] = arrayList.get(j).intValue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s0">return </span><span class="s1">asArray</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">static void </span><span class="s1">writeFile(String filename</span><span class="s0">, int</span><span class="s1">[] arr) </span><span class="s0">throws </span><span class="s1">IOException {</span>
+        <span class="s1">BufferedWriter ow = </span><span class="s0">null;</span>
+        <span class="s1">ow = </span><span class="s0">new </span><span class="s1">BufferedWriter(</span><span class="s0">new </span><span class="s1">FileWriter(filename))</span><span class="s0">;</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s0">; </span><span class="s1">i &lt; arr.length</span><span class="s0">; </span><span class="s1">i++) {</span>
+
+            <span class="s1">ow.write(arr[i]+</span><span class="s4">&quot;&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">ow.newLine()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s1">ow.flush()</span><span class="s0">;</span>
+        <span class="s1">ow.close()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+
+</pre>
+</body>
+</html>

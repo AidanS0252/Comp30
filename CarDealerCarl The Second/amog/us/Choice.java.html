@@ -1,0 +1,295 @@
+<html>
+<head>
+<title>Choice.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Choice.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">amog.us</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s2">//contains methods related to user input</span>
+<span class="s0">public class </span><span class="s1">Choice {</span>
+    <span class="s2">//uses user input to get a variable</span>
+    <span class="s0">static int </span><span class="s1">Choose(</span><span class="s0">int </span><span class="s1">choiceNum){</span>
+        <span class="s2">//choiceNum: Number of choices available</span>
+
+        <span class="s1">Scanner choices = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Input choice as int&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">answer = Integer.parseInt(choices.nextLine())</span><span class="s0">;</span>
+        <span class="s2">//sends error if choice above highest option</span>
+        <span class="s0">if</span><span class="s1">(answer &gt; choiceNum){</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Invalid choice, above highest option.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.exit(</span><span class="s4">0</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+       <span class="s2">//sends error if equal to or lower than 0</span>
+        <span class="s0">if</span><span class="s1">(answer &lt;= </span><span class="s4">0</span><span class="s1">){</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Invalid choice, can't be 0 or below.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.exit(</span><span class="s4">0</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">return </span><span class="s1">answer</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">//uses input to get password as int</span>
+    <span class="s0">static void </span><span class="s1">Passwords(</span><span class="s0">int </span><span class="s1">Correct){</span>
+       <span class="s2">//Correct: the correct password</span>
+
+
+        <span class="s1">Boolean Right = </span><span class="s0">false;</span>
+        <span class="s2">//sets password to Correct</span>
+        <span class="s0">int </span><span class="s1">Pass = Correct</span><span class="s0">;</span>
+        <span class="s2">//scanner for inputting password</span>
+        <span class="s1">Scanner Password = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Input Password as int&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s0">int </span><span class="s1">guess = Integer.parseInt(Password.nextLine())</span><span class="s0">;</span>
+
+        <span class="s2">//allows user to continue if password is correct</span>
+        <span class="s0">if </span><span class="s1">(guess == Pass){</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Correct&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Right = </span><span class="s0">true; </span><span class="s1">}</span>
+        <span class="s2">//exits program if password is incorrect</span>
+        <span class="s0">else</span><span class="s1">{</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Incorrect, Security Informed.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.exit(</span><span class="s4">0</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+
+    <span class="s1">}</span>
+    <span class="s2">//adds a Car to chosen ArrayList</span>
+    <span class="s0">static void </span><span class="s1">addCar(ArrayList arr){</span>
+    <span class="s2">//arr: ArrayList to be added to</span>
+
+        <span class="s2">//makes temp variables for new entries</span>
+         <span class="s1">String Tmodel</span><span class="s0">;</span>
+         <span class="s0">double </span><span class="s1">Tmileage</span><span class="s0">;</span>
+         <span class="s1">String Tbrand</span><span class="s0">;</span>
+         <span class="s0">double </span><span class="s1">Tprice</span><span class="s0">;</span>
+         <span class="s0">double </span><span class="s1">TgasMileage</span><span class="s0">;</span>
+         <span class="s0">int </span><span class="s1">Tdrive</span><span class="s0">;</span>
+
+
+
+            <span class="s2">//gets values for new Car using user input</span>
+            <span class="s1">Scanner carAdd = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input model name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Tmodel = carAdd.nextLine()</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Tmileage = Double.parseDouble(carAdd.nextLine())</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input brand name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Tbrand = carAdd.nextLine()</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input price as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Tprice = Double.parseDouble(carAdd.nextLine())</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input gas mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">TgasMileage = Double.parseDouble(carAdd.nextLine())</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input drive as int.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Tdrive = Integer.parseInt(carAdd.nextLine())</span><span class="s0">;</span>
+
+            <span class="s2">//adds Car to end of arr</span>
+            <span class="s1">arr.add(</span><span class="s0">new </span><span class="s1">Car(Tmodel</span><span class="s0">,</span><span class="s1">Tmileage</span><span class="s0">,</span><span class="s1">Tbrand</span><span class="s0">,</span><span class="s1">Tprice</span><span class="s0">,</span><span class="s1">TgasMileage</span><span class="s0">,</span><span class="s1">Tdrive))</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s2">//adds a Truck to chosen ArrayList</span>
+        <span class="s0">static void </span><span class="s1">addTruck(ArrayList arr){</span>
+        <span class="s2">//arr: ArrayList to be added to</span>
+
+
+
+            <span class="s2">//makes temp variables for new entries</span>
+            <span class="s1">String Tmodel</span><span class="s0">;</span>
+            <span class="s0">double </span><span class="s1">Tmileage</span><span class="s0">;</span>
+            <span class="s1">String Tbrand</span><span class="s0">;</span>
+            <span class="s0">double </span><span class="s1">Tprice</span><span class="s0">;</span>
+            <span class="s0">double </span><span class="s1">TgasMileage</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">Tdrive</span><span class="s0">;</span>
+            <span class="s1">String TtruckBed</span><span class="s0">;</span>
+
+            <span class="s2">//gets values for new Truck using user input</span>
+            <span class="s1">Scanner truckAdd = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input model name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Tmodel = truckAdd.nextLine()</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Tmileage = Double.parseDouble(truckAdd.nextLine())</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input brand name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Tbrand = truckAdd.nextLine()</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input price as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Tprice = Double.parseDouble(truckAdd.nextLine())</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input gas mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">TgasMileage = Double.parseDouble(truckAdd.nextLine())</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input drive as int.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Tdrive = Integer.parseInt(truckAdd.nextLine())</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input truck bed size as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">TtruckBed = truckAdd.nextLine()</span><span class="s0">;</span>
+            <span class="s2">//adds Truck to end of arr</span>
+            <span class="s1">arr.add(</span><span class="s0">new </span><span class="s1">Truck(Tmodel</span><span class="s0">,</span><span class="s1">Tmileage</span><span class="s0">,</span><span class="s1">Tbrand</span><span class="s0">,</span><span class="s1">Tprice</span><span class="s0">,</span><span class="s1">TgasMileage</span><span class="s0">,</span><span class="s1">Tdrive</span><span class="s0">,</span><span class="s1">TtruckBed))</span><span class="s0">;</span>
+
+        <span class="s1">}</span>
+        <span class="s2">//adds a Van to chosen ArrayList</span>
+        <span class="s0">static void </span><span class="s1">addVan(ArrayList arr){</span>
+        <span class="s2">//arr: ArrayList to be added to</span>
+
+        <span class="s2">//makes temp variables for new entries</span>
+        <span class="s1">String Tmodel</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">Tmileage</span><span class="s0">;</span>
+        <span class="s1">String Tbrand</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">Tprice</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">TgasMileage</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">Tdrive</span><span class="s0">;</span>
+        <span class="s1">String Tstorage</span><span class="s0">;</span>
+
+
+
+
+        <span class="s2">//gets values for new Van using user input</span>
+        <span class="s1">Scanner vanAdd = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input model name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tmodel = vanAdd.nextLine()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tmileage = Double.parseDouble(vanAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input brand name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tbrand = vanAdd.nextLine()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input price as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tprice = Double.parseDouble(vanAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input gas mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">TgasMileage = Double.parseDouble(vanAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input drive as int.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tdrive = Integer.parseInt(vanAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input storage space as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tstorage = vanAdd.nextLine()</span><span class="s0">;</span>
+        <span class="s2">//adds Van to end of arr</span>
+        <span class="s1">arr.add(</span><span class="s0">new </span><span class="s1">Van(Tmodel</span><span class="s0">,</span><span class="s1">Tmileage</span><span class="s0">,</span><span class="s1">Tbrand</span><span class="s0">,</span><span class="s1">Tprice</span><span class="s0">,</span><span class="s1">TgasMileage</span><span class="s0">,</span><span class="s1">Tdrive</span><span class="s0">,</span><span class="s1">Tstorage))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">//removes a object from chosen ArrayList</span>
+    <span class="s0">static void </span><span class="s1">removeObj(ArrayList arr</span><span class="s0">,int </span><span class="s1">num){</span>
+        <span class="s2">//arr: ArrayList to be removed</span>
+        <span class="s2">//num: element to be removed</span>
+        <span class="s1">arr.remove(num)</span><span class="s0">;</span>
+
+
+    <span class="s1">}</span>
+    <span class="s2">//changes a Car in chosen ArrayList</span>
+    <span class="s0">static void </span><span class="s1">changeCar(</span><span class="s0">int </span><span class="s1">num</span><span class="s0">, </span><span class="s1">ArrayList arr){</span>
+        <span class="s2">//num: element to be changed</span>
+        <span class="s2">//arr: ArrayList to be changed</span>
+
+        <span class="s2">//makes temp variables for new entries</span>
+        <span class="s1">String Tmodel</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">Tmileage</span><span class="s0">;</span>
+        <span class="s1">String Tbrand</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">Tprice</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">TgasMileage</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">Tdrive</span><span class="s0">;</span>
+
+
+
+        <span class="s2">//gets new values for Car using user input</span>
+        <span class="s1">Scanner carAdd = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input model name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tmodel = carAdd.nextLine()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tmileage = Double.parseDouble(carAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input brand name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tbrand = carAdd.nextLine()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input price as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tprice = Double.parseDouble(carAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input gas mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">TgasMileage = Double.parseDouble(carAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input drive as int.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tdrive = Integer.parseInt(carAdd.nextLine())</span><span class="s0">;</span>
+
+        <span class="s2">//changes Car with new values</span>
+        <span class="s1">arr.set(num</span><span class="s0">,new </span><span class="s1">Car(Tmodel</span><span class="s0">,</span><span class="s1">Tmileage</span><span class="s0">,</span><span class="s1">Tbrand</span><span class="s0">,</span><span class="s1">Tprice</span><span class="s0">,</span><span class="s1">TgasMileage</span><span class="s0">,</span><span class="s1">Tdrive))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s2">//changes a Truck in chosen ArrayList</span>
+    <span class="s0">static void </span><span class="s1">changeTruck(</span><span class="s0">int </span><span class="s1">num</span><span class="s0">, </span><span class="s1">ArrayList arr){</span>
+        <span class="s2">//num: element to be changed</span>
+        <span class="s2">//arr: ArrayList to be changed</span>
+
+
+
+        <span class="s2">//makes temp variables for new entries</span>
+        <span class="s1">String Tmodel</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">Tmileage</span><span class="s0">;</span>
+        <span class="s1">String Tbrand</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">Tprice</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">TgasMileage</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">Tdrive</span><span class="s0">;</span>
+        <span class="s1">String TtruckBed</span><span class="s0">;</span>
+
+        <span class="s2">//gets new values for Truck using user input</span>
+        <span class="s1">Scanner truckAdd = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input model name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tmodel = truckAdd.nextLine()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tmileage = Double.parseDouble(truckAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input brand name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tbrand = truckAdd.nextLine()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input price as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tprice = Double.parseDouble(truckAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input gas mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">TgasMileage = Double.parseDouble(truckAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input drive as int.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tdrive = Integer.parseInt(truckAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input truck bed size as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">TtruckBed = truckAdd.nextLine()</span><span class="s0">;</span>
+
+
+        <span class="s2">//changes Truck with new values</span>
+        <span class="s1">arr.set(num</span><span class="s0">,new </span><span class="s1">Truck(Tmodel</span><span class="s0">,</span><span class="s1">Tmileage</span><span class="s0">,</span><span class="s1">Tbrand</span><span class="s0">,</span><span class="s1">Tprice</span><span class="s0">,</span><span class="s1">TgasMileage</span><span class="s0">,</span><span class="s1">Tdrive</span><span class="s0">,</span><span class="s1">TtruckBed))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+    <span class="s2">//changes a Van in chosen ArrayList</span>
+    <span class="s0">static void </span><span class="s1">changeVan(</span><span class="s0">int </span><span class="s1">num</span><span class="s0">, </span><span class="s1">ArrayList arr){</span>
+        <span class="s2">//num: element to be changed</span>
+        <span class="s2">//arr: ArrayList to be changed</span>
+
+
+
+        <span class="s2">//makes temp variables for new entries</span>
+        <span class="s1">String Tmodel</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">Tmileage</span><span class="s0">;</span>
+        <span class="s1">String Tbrand</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">Tprice</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">TgasMileage</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">Tdrive</span><span class="s0">;</span>
+        <span class="s1">String Tstorage</span><span class="s0">;</span>
+
+        <span class="s2">//gets new values for Van using user input</span>
+        <span class="s1">Scanner truckAdd = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input model name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tmodel = truckAdd.nextLine()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tmileage = Double.parseDouble(truckAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input brand name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tbrand = truckAdd.nextLine()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input price as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tprice = Double.parseDouble(truckAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input gas mileage as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">TgasMileage = Double.parseDouble(truckAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input drive as int.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tdrive = Integer.parseInt(truckAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input storage size as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tstorage = truckAdd.nextLine()</span><span class="s0">;</span>
+
+
+        <span class="s2">//changes Van with new values</span>
+        <span class="s1">arr.set(num</span><span class="s0">,new </span><span class="s1">Van(Tmodel</span><span class="s0">,</span><span class="s1">Tmileage</span><span class="s0">,</span><span class="s1">Tbrand</span><span class="s0">,</span><span class="s1">Tprice</span><span class="s0">,</span><span class="s1">TgasMileage</span><span class="s0">,</span><span class="s1">Tdrive</span><span class="s0">,</span><span class="s1">Tstorage))</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

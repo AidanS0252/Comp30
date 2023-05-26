@@ -1,0 +1,183 @@
+<html>
+<head>
+<title>Choice.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Choice.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">amog.us</span><span class="s0">;</span>
+
+
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+
+<span class="s0">public class </span><span class="s1">Choice {</span>
+
+    <span class="s2">//uses user input to get a variable</span>
+    <span class="s0">static int </span><span class="s1">Choose(</span><span class="s0">int </span><span class="s1">choiceNum){</span>
+        <span class="s2">//choiceNum: Number of choices available</span>
+
+        <span class="s1">Scanner choices = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Input choice as int&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">answer = Integer.parseInt(choices.nextLine())</span><span class="s0">;</span>
+        <span class="s2">//sends error if choice above highest option</span>
+        <span class="s0">if</span><span class="s1">(answer &gt; choiceNum){</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Invalid choice, above highest option.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.exit(</span><span class="s4">0</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s2">//sends error if equal to or lower than 0</span>
+        <span class="s0">if</span><span class="s1">(answer &lt;= </span><span class="s4">0</span><span class="s1">){</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Invalid choice, can't be 0 or below.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.exit(</span><span class="s4">0</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">return </span><span class="s1">answer</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">//uses input to get password as int</span>
+    <span class="s0">static void </span><span class="s1">Passwords(</span><span class="s0">int </span><span class="s1">Correct){</span>
+        <span class="s2">//Correct: the correct password</span>
+
+
+        <span class="s1">Boolean Right = </span><span class="s0">false;</span>
+        <span class="s2">//sets password to Correct</span>
+        <span class="s0">int </span><span class="s1">Pass = Correct</span><span class="s0">;</span>
+        <span class="s2">//scanner for inputting password</span>
+        <span class="s1">Scanner Password = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Input Password as int&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s0">int </span><span class="s1">guess = Integer.parseInt(Password.nextLine())</span><span class="s0">;</span>
+
+        <span class="s2">//allows user to continue if password is correct</span>
+        <span class="s0">if </span><span class="s1">(guess == Pass){</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Correct&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Right = </span><span class="s0">true; </span><span class="s1">}</span>
+        <span class="s2">//exits program if password is incorrect</span>
+        <span class="s0">else</span><span class="s1">{</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Incorrect, Security Informed.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.exit(</span><span class="s4">0</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+
+    <span class="s1">}</span>
+    <span class="s2">//adds an Account</span>
+    <span class="s0">static void </span><span class="s1">addAcc(ArrayList arrA</span><span class="s0">, </span><span class="s1">ArrayList arrS</span><span class="s0">, </span><span class="s1">ArrayList arrB</span><span class="s0">, </span><span class="s1">ArrayList arrP){</span>
+        <span class="s2">//arrA: Account ArrayList to be added to</span>
+        <span class="s2">//arrB: Balance ArrayList to be added to</span>
+        <span class="s2">//arrP: Pin ArrayList to be added to</span>
+        <span class="s2">//makes temp variables for new entries</span>
+        <span class="s1">String Tname</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">Tpin</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">Tsin</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">Tbalance</span><span class="s0">;</span>
+
+
+
+        <span class="s2">//gets values for new Account using user input</span>
+        <span class="s1">Scanner accountAdd = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input account name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tname = accountAdd.nextLine()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input PIN number as int.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tpin = Integer.parseInt(accountAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input SIN number as int.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tsin = Integer.parseInt(accountAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input amount of money to add as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tbalance = Double.parseDouble(accountAdd.nextLine())</span><span class="s0">;</span>
+
+
+
+        <span class="s2">//adds entries to ArrayLists to end of arr</span>
+        <span class="s1">arrA.add(Tname)</span><span class="s0">;</span>
+        <span class="s1">arrS.add(Tsin)</span><span class="s0">;</span>
+        <span class="s1">arrB.add(Tbalance)</span><span class="s0">;</span>
+        <span class="s1">arrP.add(Tpin)</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+    <span class="s2">//changes ArrayLists</span>
+    <span class="s0">static void </span><span class="s1">changeArr(</span><span class="s0">int </span><span class="s1">num</span><span class="s0">, </span><span class="s1">ArrayList arrA</span><span class="s0">, </span><span class="s1">ArrayList arrS</span><span class="s0">, </span><span class="s1">ArrayList arrB</span><span class="s0">, </span><span class="s1">ArrayList arrP){</span>
+        <span class="s2">//num: element to be changed</span>
+        <span class="s2">//arrA: Account to be changed</span>
+        <span class="s2">//arrS: SIN to be changed</span>
+        <span class="s2">//arrB: Balance ArrayList to be changed</span>
+       <span class="s2">//arrP: PIN to be changed</span>
+        <span class="s2">//makes temp variables for new entries</span>
+        <span class="s1">String Tname</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">Tpin</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">Tsin</span><span class="s0">;</span>
+        <span class="s0">double </span><span class="s1">Tbalance</span><span class="s0">;</span>
+
+
+
+        <span class="s2">//gets new values using user input</span>
+        <span class="s1">Scanner accountAdd = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input account name as string.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tname = accountAdd.nextLine()</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input PIN number as int.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tpin = Integer.parseInt(accountAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input SIN number as int.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tsin = Integer.parseInt(accountAdd.nextLine())</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input new balance as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Tbalance = Double.parseDouble(accountAdd.nextLine())</span><span class="s0">;</span>
+
+        <span class="s2">//changes Account with new values</span>
+        <span class="s1">arrA.set(num</span><span class="s0">,</span><span class="s1">Tname)</span><span class="s0">;</span>
+        <span class="s1">arrS.set(num</span><span class="s0">,</span><span class="s1">Tsin)</span><span class="s0">;</span>
+        <span class="s1">arrB.set(num</span><span class="s0">,</span><span class="s1">Tbalance)</span><span class="s0">;</span>
+        <span class="s1">arrP.set(num</span><span class="s0">,</span><span class="s1">Tpin)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">//removes a object from chosen ArrayList</span>
+    <span class="s0">static void </span><span class="s1">removeObj(ArrayList arrA</span><span class="s0">, </span><span class="s1">ArrayList arrS</span><span class="s0">, </span><span class="s1">ArrayList arrB</span><span class="s0">, </span><span class="s1">ArrayList arrP</span><span class="s0">, int </span><span class="s1">num){</span>
+        <span class="s2">//arrA,B,P: ArrayList to be removed from</span>
+        <span class="s2">//num: element to be removed</span>
+        <span class="s1">arrA.remove(num)</span><span class="s0">;</span>
+        <span class="s1">arrS.remove(num)</span><span class="s0">;</span>
+        <span class="s1">arrB.remove(num)</span><span class="s0">;</span>
+        <span class="s1">arrP.remove(num)</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s2">//withdraws from account</span>
+    <span class="s0">static void </span><span class="s1">balanceChange(ArrayList arr</span><span class="s0">, int </span><span class="s1">num){</span>
+
+
+        <span class="s2">//the new balance</span>
+        <span class="s0">double </span><span class="s1">newBalance</span><span class="s0">;</span>
+        <span class="s2">//gets amount to withdraw</span>
+        <span class="s1">Scanner withdrawInput = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Please input new balance as double.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">newBalance = Double.parseDouble(withdrawInput.nextLine())</span><span class="s0">;</span>
+
+        <span class="s1">arr.set(num</span><span class="s0">, </span><span class="s1">newBalance)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">static void </span><span class="s1">printArrayList(</span><span class="s0">int </span><span class="s1">num</span><span class="s0">,</span><span class="s1">ArrayList arrA</span><span class="s0">,</span><span class="s1">ArrayList arrS</span><span class="s0">,</span><span class="s1">ArrayList arrB</span><span class="s0">, </span><span class="s1">ArrayList arrP){</span>
+
+        <span class="s1">var pName = arrA.get(num)</span><span class="s0">;</span>
+        <span class="s1">var pSin = arrS.get(num)</span><span class="s0">;</span>
+        <span class="s1">var pBalance = arrB.get(num)</span><span class="s0">;</span>
+        <span class="s1">var pPin = arrP.get(num)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;ID &quot; </span><span class="s1">+ num)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Name:&quot; </span><span class="s1">+ pName)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;SIN:&quot; </span><span class="s1">+ pSin)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Balance:&quot; </span><span class="s1">+pBalance)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;PIN:&quot; </span><span class="s1">+ pPin)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

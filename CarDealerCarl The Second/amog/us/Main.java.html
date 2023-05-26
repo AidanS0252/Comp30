@@ -1,0 +1,441 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">amog.us</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s2">//for looping whole program</span>
+        <span class="s0">int </span><span class="s1">loop2 = </span><span class="s3">1</span><span class="s0">;</span>
+        <span class="s2">//example car</span>
+        <span class="s1">Car Fred = </span><span class="s0">new </span><span class="s1">Car(</span><span class="s4">&quot;Car&quot;</span><span class="s0">, </span><span class="s1">-</span><span class="s3">1000</span><span class="s0">, </span><span class="s4">&quot;Great Value&quot;</span><span class="s0">, </span><span class="s3">0.001</span><span class="s0">, </span><span class="s3">1</span><span class="s0">, </span><span class="s3">0</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s2">//example truck</span>
+        <span class="s1">Truck Larry = </span><span class="s0">new </span><span class="s1">Truck(</span><span class="s4">&quot;Prius&quot;</span><span class="s0">, </span><span class="s3">9999999</span><span class="s0">, </span><span class="s4">&quot;i don't know man&quot;</span><span class="s0">, </span><span class="s3">999999</span><span class="s0">, </span><span class="s3">9999</span><span class="s0">, </span><span class="s1">-</span><span class="s3">9</span><span class="s0">, </span><span class="s4">&quot;Not my Problem&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s2">//example van</span>
+        <span class="s1">Van Joe = </span><span class="s0">new </span><span class="s1">Van(</span><span class="s4">&quot;Fast&quot;</span><span class="s0">,  </span><span class="s3">666</span><span class="s0">, </span><span class="s4">&quot;Hell&quot;</span><span class="s0">, </span><span class="s3">666</span><span class="s0">, </span><span class="s3">666</span><span class="s0">, </span><span class="s3">666</span><span class="s0">, </span><span class="s4">&quot;Minute&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s2">//makes array list for cars</span>
+        <span class="s1">ArrayList&lt;Car&gt; carObj = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Car&gt;()</span><span class="s0">;</span>
+       <span class="s2">//makes array list for trucks</span>
+        <span class="s1">ArrayList&lt;Truck&gt; truckObj = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Truck&gt;()</span><span class="s0">;</span>
+        <span class="s2">//makes array list for vans</span>
+        <span class="s1">ArrayList&lt;Van&gt; vanObj = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Van&gt;()</span><span class="s0">;</span>
+
+
+        <span class="s1">carObj.add(Fred)</span><span class="s0">;</span>
+        <span class="s1">truckObj.add(Larry)</span><span class="s0">;</span>
+        <span class="s1">vanObj.add(Joe)</span><span class="s0">;</span>
+
+        <span class="s2">//loops whole interface</span>
+        <span class="s0">while </span><span class="s1">(loop2 == </span><span class="s3">1</span><span class="s1">){</span>
+            <span class="s2">//for looping admin</span>
+            <span class="s0">int </span><span class="s1">loop = </span><span class="s3">1</span><span class="s0">;</span>
+            <span class="s2">//choice to see if user or admin</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Are you 1. A User? or 2. A Manager?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s2">//runs Choose method</span>
+        <span class="s0">int </span><span class="s1">userselect = Choice.Choose(</span><span class="s3">2</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s2">//USER</span>
+        <span class="s0">if</span><span class="s1">(userselect == </span><span class="s3">1</span><span class="s1">){</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Welcome User.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+            <span class="s2">//sees what user wants to do</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Would you like to 1. Buy Car, 2. Sell Car, 3. Cancel&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">userChoice = Choice.Choose(</span><span class="s3">3</span><span class="s1">)</span><span class="s0">;</span>
+
+
+
+            <span class="s2">//buy car, just a changed copy of remove car from admin</span>
+            <span class="s0">if</span><span class="s1">(userChoice == </span><span class="s3">1</span><span class="s1">){</span>
+
+                <span class="s1">System.out.println(</span><span class="s4">&quot;Do you want to 1. Buy Car 2. Buy Truck, 3. Buy Van, 4. Cancel?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s0">int </span><span class="s1">removeChoose = Choice.Choose(</span><span class="s3">4</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s2">//remove car</span>
+                <span class="s1">Scanner carRemove = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+                <span class="s0">if</span><span class="s1">(removeChoose == </span><span class="s3">1</span><span class="s1">){</span>
+                    <span class="s2">//int for printing id</span>
+                    <span class="s0">int </span><span class="s1">carNum = </span><span class="s3">0</span><span class="s0">;</span>
+                    <span class="s2">//prints all of cars values, no method since it wasn't working when i used one</span>
+                    <span class="s0">for</span><span class="s1">(Car thisCar : carObj ){</span>
+
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ carNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">carNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisCar.model)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisCar.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisCar.brand)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisCar.price)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisCar.gasMileage)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(thisCar.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                    <span class="s1">}</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Input ID of car to buy.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">int </span><span class="s1">removeNum = Integer.parseInt(carRemove.nextLine())</span><span class="s0">;</span>
+                    <span class="s1">Choice.removeObj(carObj</span><span class="s0">,</span><span class="s1">removeNum)</span><span class="s0">;</span>
+
+                <span class="s1">}</span>
+
+                <span class="s0">else if</span><span class="s1">(removeChoose == </span><span class="s3">2</span><span class="s1">){</span>
+                    <span class="s2">//int for printing id</span>
+                    <span class="s0">int </span><span class="s1">truckNum = </span><span class="s3">0</span><span class="s0">;</span>
+                    <span class="s2">//prints all of trucks values, no method since it wasn't working when i used one</span>
+                    <span class="s0">for</span><span class="s1">(Truck thisTruck : truckObj ){</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ truckNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">truckNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisTruck.model)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisTruck.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisTruck.brand)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisTruck.price)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisTruck.gasMileage)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(thisTruck.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Truck Bed Size &quot; </span><span class="s1">+ thisTruck.truckBed)</span><span class="s0">;</span>
+                        <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                    <span class="s1">}</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Input ID of truck to buy.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">int </span><span class="s1">removeNum = Integer.parseInt(carRemove.nextLine())</span><span class="s0">;</span>
+                    <span class="s1">Choice.removeObj(truckObj</span><span class="s0">,</span><span class="s1">removeNum)</span><span class="s0">;</span>
+
+                <span class="s1">}</span>
+                <span class="s0">else if</span><span class="s1">(removeChoose == </span><span class="s3">3</span><span class="s1">){</span>
+                    <span class="s2">//int for printing id</span>
+                    <span class="s0">int </span><span class="s1">vanNum = </span><span class="s3">0</span><span class="s0">;</span>
+                    <span class="s2">//prints all of vans values, no method since it wasn't working when i used one</span>
+                    <span class="s0">for</span><span class="s1">(Van thisVan : vanObj ){</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ vanNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">vanNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisVan.model)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisVan.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisVan.brand)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisVan.price)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisVan.gasMileage)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(thisVan.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Storage Size &quot; </span><span class="s1">+ thisVan.storage)</span><span class="s0">;</span>
+                        <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                    <span class="s1">}</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Input ID of van to buy.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">int </span><span class="s1">removeNum = Integer.parseInt(carRemove.nextLine())</span><span class="s0">;</span>
+                    <span class="s1">Choice.removeObj(vanObj</span><span class="s0">,</span><span class="s1">removeNum)</span><span class="s0">;</span>
+
+                <span class="s1">}</span>
+
+                <span class="s0">else if</span><span class="s1">(removeChoose == </span><span class="s3">4</span><span class="s1">){}</span>
+
+            <span class="s1">}</span>
+
+
+            <span class="s2">//sell car, just a changed copy of add car from admin</span>
+            <span class="s0">else if</span><span class="s1">(userChoice == </span><span class="s3">2</span><span class="s1">){</span>
+
+                <span class="s1">System.out.println(</span><span class="s4">&quot;Do you want to 1. Sell Car 2. Sell Truck, 3. Sell Van, 4. Cancel?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s0">int </span><span class="s1">addChoose = Choice.Choose(</span><span class="s3">4</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s2">//add car</span>
+                <span class="s0">if</span><span class="s1">(addChoose == </span><span class="s3">1</span><span class="s1">){</span>
+                    <span class="s1">Choice.addCar(carObj)</span><span class="s0">;</span><span class="s1">}</span>
+                <span class="s2">//add truck</span>
+                <span class="s0">else if</span><span class="s1">(addChoose == </span><span class="s3">2</span><span class="s1">){</span>
+                    <span class="s1">Choice.addTruck(truckObj)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s2">//add van</span>
+                <span class="s0">else if</span><span class="s1">(addChoose == </span><span class="s3">3</span><span class="s1">){</span>
+                    <span class="s1">Choice.addVan(vanObj)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">else if</span><span class="s1">(addChoose == </span><span class="s3">4</span><span class="s1">){</span>
+
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+            <span class="s2">//cancel</span>
+            <span class="s0">else if</span><span class="s1">(userChoice == </span><span class="s3">3</span><span class="s1">){</span>
+
+
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Goodbye, User.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">loop = </span><span class="s3">0</span><span class="s0">;</span>
+
+            <span class="s1">}</span>
+
+        <span class="s1">}</span>
+        <span class="s2">//ADMIN</span>
+        <span class="s0">else if</span><span class="s1">(userselect == </span><span class="s3">2</span><span class="s1">){</span>
+            <span class="s2">//Password to confirm admin</span>
+            <span class="s1">Choice.Passwords(</span><span class="s3">1234</span><span class="s1">)</span><span class="s0">;</span>
+           <span class="s2">//loops admin</span>
+            <span class="s0">while</span><span class="s1">(loop == </span><span class="s3">1</span><span class="s1">){</span>
+            <span class="s2">//sees what admin wants to do</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Welcome, Admin.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;1. Add Car?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;2. Change Car?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;3. Remove Car?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;4. View all cars?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;5. Logout?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">adminSelect = Choice.Choose(</span><span class="s3">5</span><span class="s1">)</span><span class="s0">;</span>
+
+
+            <span class="s2">//Add Car</span>
+            <span class="s0">if</span><span class="s1">(adminSelect == </span><span class="s3">1</span><span class="s1">){</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;Do you want to 1. add Car 2. add Truck, 3. add Van, 4. Cancel?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s0">int </span><span class="s1">addChoose = Choice.Choose(</span><span class="s3">4</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s2">//add car</span>
+                <span class="s0">if</span><span class="s1">(addChoose == </span><span class="s3">1</span><span class="s1">){</span>
+                <span class="s1">Choice.addCar(carObj)</span><span class="s0">;</span><span class="s1">}</span>
+               <span class="s2">//add truck</span>
+                <span class="s0">else if</span><span class="s1">(addChoose == </span><span class="s3">2</span><span class="s1">){</span>
+                    <span class="s1">Choice.addTruck(truckObj)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s2">//add van</span>
+                <span class="s0">else if</span><span class="s1">(addChoose == </span><span class="s3">3</span><span class="s1">){</span>
+                    <span class="s1">Choice.addVan(vanObj)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">else if</span><span class="s1">(addChoose == </span><span class="s3">4</span><span class="s1">){</span>
+
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+
+            <span class="s2">//Change Car</span>
+            <span class="s0">else if</span><span class="s1">(adminSelect == </span><span class="s3">2</span><span class="s1">){</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;Do you want to 1. change Car 2. change Truck, 3. change Van, 4. Cancel?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s0">int </span><span class="s1">removeChoose = Choice.Choose(</span><span class="s3">4</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s2">//change car</span>
+                <span class="s1">Scanner carChange = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+                <span class="s0">if</span><span class="s1">(removeChoose == </span><span class="s3">1</span><span class="s1">){</span>
+                    <span class="s2">//int for printing id</span>
+                    <span class="s0">int </span><span class="s1">carNum = </span><span class="s3">0</span><span class="s0">;</span>
+                    <span class="s2">//prints all of cars values, no method since it wasn't working when i used one</span>
+                    <span class="s0">for</span><span class="s1">(Car thisCar : carObj ){</span>
+
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ carNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">carNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisCar.model)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisCar.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisCar.brand)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisCar.price)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisCar.gasMileage)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(thisCar.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                    <span class="s1">}</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Input ID of car to change.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">int </span><span class="s1">changeNum = Integer.parseInt(carChange.nextLine())</span><span class="s0">;</span>
+                    <span class="s1">Choice.changeCar(changeNum</span><span class="s0">,</span><span class="s1">carObj)</span><span class="s0">;</span>
+
+                <span class="s1">}</span>
+
+                <span class="s0">else if</span><span class="s1">(removeChoose == </span><span class="s3">2</span><span class="s1">){</span>
+                    <span class="s2">//int for printing id</span>
+                    <span class="s0">int </span><span class="s1">truckNum = </span><span class="s3">0</span><span class="s0">;</span>
+                    <span class="s2">//prints all of trucks values, no method since it wasn't working when i used one</span>
+                    <span class="s0">for</span><span class="s1">(Truck thisTruck : truckObj ){</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ truckNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">truckNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisTruck.model)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisTruck.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisTruck.brand)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisTruck.price)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisTruck.gasMileage)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(thisTruck.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Truck Bed Size &quot; </span><span class="s1">+ thisTruck.truckBed)</span><span class="s0">;</span>
+                        <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                    <span class="s1">}</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Input ID of truck to change.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">int </span><span class="s1">changeNum = Integer.parseInt(carChange.nextLine())</span><span class="s0">;</span>
+                    <span class="s1">Choice.changeTruck(changeNum</span><span class="s0">,</span><span class="s1">truckObj)</span><span class="s0">;</span>
+
+                <span class="s1">}</span>
+                <span class="s0">else if</span><span class="s1">(removeChoose == </span><span class="s3">3</span><span class="s1">){</span>
+                    <span class="s2">//int for printing id</span>
+                    <span class="s0">int </span><span class="s1">vanNum = </span><span class="s3">0</span><span class="s0">;</span>
+                    <span class="s2">//prints all of vans values, no method since it wasn't working when i used one</span>
+                    <span class="s0">for</span><span class="s1">(Van thisVan : vanObj ){</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ vanNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">vanNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisVan.model)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisVan.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisVan.brand)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisVan.price)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisVan.gasMileage)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(thisVan.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Storage Size &quot; </span><span class="s1">+ thisVan.storage)</span><span class="s0">;</span>
+                        <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                    <span class="s1">}</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Input ID of van to change.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">int </span><span class="s1">changeNum = Integer.parseInt(carChange.nextLine())</span><span class="s0">;</span>
+                    <span class="s1">Choice.changeVan(changeNum</span><span class="s0">,</span><span class="s1">vanObj)</span><span class="s0">;</span>
+
+                <span class="s1">}</span>
+                <span class="s0">else if</span><span class="s1">(removeChoose == </span><span class="s3">4</span><span class="s1">){}</span>
+            <span class="s1">}</span>
+
+            <span class="s2">//Remove Car</span>
+            <span class="s0">else if</span><span class="s1">(adminSelect == </span><span class="s3">3</span><span class="s1">){</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;Do you want to 1. remove Car 2. remove Truck, 3. remove Van, 4. Cancel?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s0">int </span><span class="s1">removeChoose = Choice.Choose(</span><span class="s3">4</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s2">//remove car</span>
+                <span class="s1">Scanner carRemove = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+                <span class="s0">if</span><span class="s1">(removeChoose == </span><span class="s3">1</span><span class="s1">){</span>
+                    <span class="s2">//int for printing id</span>
+                    <span class="s0">int </span><span class="s1">carNum = </span><span class="s3">0</span><span class="s0">;</span>
+                    <span class="s2">//prints all of cars values, no method since it wasn't working when i used one</span>
+                    <span class="s0">for</span><span class="s1">(Car thisCar : carObj ){</span>
+
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ carNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">carNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisCar.model)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisCar.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisCar.brand)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisCar.price)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisCar.gasMileage)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(thisCar.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                    <span class="s1">}</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Input ID of car to remove.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">int </span><span class="s1">removeNum = Integer.parseInt(carRemove.nextLine())</span><span class="s0">;</span>
+                    <span class="s1">Choice.removeObj(carObj</span><span class="s0">,</span><span class="s1">removeNum)</span><span class="s0">;</span>
+
+                <span class="s1">}</span>
+
+                <span class="s0">else if</span><span class="s1">(removeChoose == </span><span class="s3">2</span><span class="s1">){</span>
+                    <span class="s2">//int for printing id</span>
+                    <span class="s0">int </span><span class="s1">truckNum = </span><span class="s3">0</span><span class="s0">;</span>
+                    <span class="s2">//prints all of trucks values, no method since it wasn't working when i used one</span>
+                    <span class="s0">for</span><span class="s1">(Truck thisTruck : truckObj ){</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ truckNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">truckNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisTruck.model)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisTruck.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisTruck.brand)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisTruck.price)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisTruck.gasMileage)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(thisTruck.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Truck Bed Size &quot; </span><span class="s1">+ thisTruck.truckBed)</span><span class="s0">;</span>
+                        <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                    <span class="s1">}</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Input ID of truck to remove.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">int </span><span class="s1">removeNum = Integer.parseInt(carRemove.nextLine())</span><span class="s0">;</span>
+                    <span class="s1">Choice.removeObj(truckObj</span><span class="s0">,</span><span class="s1">removeNum)</span><span class="s0">;</span>
+
+                <span class="s1">}</span>
+                <span class="s0">else if</span><span class="s1">(removeChoose == </span><span class="s3">3</span><span class="s1">){</span>
+                    <span class="s2">//int for printing id</span>
+                    <span class="s0">int </span><span class="s1">vanNum = </span><span class="s3">0</span><span class="s0">;</span>
+                    <span class="s2">//prints all of vans values, no method since it wasn't working when i used one</span>
+                    <span class="s0">for</span><span class="s1">(Van thisVan : vanObj ){</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ vanNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">vanNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisVan.model)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisVan.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisVan.brand)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisVan.price)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisVan.gasMileage)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(thisVan.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s4">&quot;Storage Size &quot; </span><span class="s1">+ thisVan.storage)</span><span class="s0">;</span>
+                        <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                    <span class="s1">}</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Input ID of van to remove.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">int </span><span class="s1">removeNum = Integer.parseInt(carRemove.nextLine())</span><span class="s0">;</span>
+                    <span class="s1">Choice.removeObj(vanObj</span><span class="s0">,</span><span class="s1">removeNum)</span><span class="s0">;</span>
+
+                <span class="s1">}</span>
+                <span class="s0">else if</span><span class="s1">(removeChoose == </span><span class="s3">4</span><span class="s1">){}</span>
+            <span class="s1">}</span>
+            <span class="s2">//Display all</span>
+            <span class="s0">else if</span><span class="s1">(adminSelect == </span><span class="s3">4</span><span class="s1">){</span>
+                <span class="s2">//int for printing id</span>
+                <span class="s0">int </span><span class="s1">carNum = </span><span class="s3">0</span><span class="s0">;</span>
+                <span class="s2">//prints all of cars values, no method since it wasn't working when i used one</span>
+                <span class="s0">for</span><span class="s1">(Car thisCar : carObj ){</span>
+
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ carNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">carNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisCar.model)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisCar.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisCar.brand)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisCar.price)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisCar.gasMileage)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(thisCar.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                <span class="s1">}</span>
+                <span class="s2">//int for printing id</span>
+                <span class="s0">int </span><span class="s1">truckNum = </span><span class="s3">0</span><span class="s0">;</span>
+                <span class="s2">//prints all of trucks values, no method since it wasn't working when i used one</span>
+                <span class="s0">for</span><span class="s1">(Truck thisTruck : truckObj ){</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ truckNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">truckNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisTruck.model)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisTruck.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisTruck.brand)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisTruck.price)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisTruck.gasMileage)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(thisTruck.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Truck Bed Size &quot; </span><span class="s1">+ thisTruck.truckBed)</span><span class="s0">;</span>
+                    <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                <span class="s1">}</span>
+                <span class="s2">//int for printing id</span>
+                <span class="s0">int </span><span class="s1">vanNum = </span><span class="s3">0</span><span class="s0">;</span>
+                <span class="s2">//prints all of vans values, no method since it wasn't working when i used one</span>
+                <span class="s0">for</span><span class="s1">(Van thisVan : vanObj ){</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;ID &quot; </span><span class="s1">+ vanNum + </span><span class="s4">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">vanNum = +</span><span class="s3">1</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Model:&quot; </span><span class="s1">+ thisVan.model)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Mileage:&quot; </span><span class="s1">+ thisVan.mileage + </span><span class="s4">&quot; miles&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Brand:&quot; </span><span class="s1">+ thisVan.brand)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Price:&quot; </span><span class="s1">+ thisVan.price)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Gas Mileage:&quot; </span><span class="s1">+ thisVan.gasMileage)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(thisVan.drive + </span><span class="s4">&quot; Wheel Drive&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s4">&quot;Storage Size &quot; </span><span class="s1">+ thisVan.storage)</span><span class="s0">;</span>
+                    <span class="s1">Methods.LineBreak()</span><span class="s0">;</span>
+
+
+                <span class="s1">}</span>
+
+                <span class="s1">}</span>
+
+            <span class="s2">//Logout</span>
+            <span class="s0">else if</span><span class="s1">(adminSelect == </span><span class="s3">5</span><span class="s1">){</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;Goodbye, Admin.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">loop = </span><span class="s3">0</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s1">}}</span>
+
+
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">amog.us</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+
+
+        <span class="s2">//ArrayLists to be used</span>
+        <span class="s1">ArrayList&lt;String&gt; accounts = </span><span class="s0">new </span><span class="s1">ArrayList&lt;String&gt;()</span><span class="s0">;</span>
+        <span class="s1">ArrayList&lt;Integer&gt; sins = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Integer&gt;()</span><span class="s0">;</span>
+        <span class="s1">ArrayList&lt;Double&gt; balances = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Double&gt;()</span><span class="s0">;</span>
+        <span class="s1">ArrayList&lt;Integer&gt; pins = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Integer&gt;()</span><span class="s0">;</span>
+
+        <span class="s2">//example entries for ArrayLists</span>
+        <span class="s1">accounts.add(</span><span class="s3">&quot;Ralph&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">sins.add(</span><span class="s4">4</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">balances.add(</span><span class="s4">10.0</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">pins.add(</span><span class="s4">139</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s2">//boolean for debug purposes</span>
+        <span class="s0">boolean </span><span class="s1">debug = </span><span class="s0">true;</span>
+        <span class="s2">//boolean to loop program</span>
+        <span class="s0">boolean </span><span class="s1">loop = </span><span class="s0">true;</span>
+        <span class="s2">//loops program</span>
+        <span class="s0">while</span><span class="s1">(loop = </span><span class="s0">true</span><span class="s1">){</span>
+
+            <span class="s2">//sees if logging in or opening account</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Would you like to 1. Log In, 2. Open Account&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s0">int </span><span class="s1">LO = Choice.Choose(</span><span class="s4">2</span><span class="s1">)</span><span class="s0">;</span>
+
+
+            <span class="s2">//LOGIN</span>
+            <span class="s0">if</span><span class="s1">(LO == </span><span class="s4">1</span><span class="s1">){</span>
+
+            <span class="s2">//ID to see which Entries to use</span>
+            <span class="s0">int </span><span class="s1">IDinput = </span><span class="s4">0</span><span class="s0">;</span>
+            <span class="s2">//ID used to find PIN</span>
+            <span class="s0">int </span><span class="s1">PINput = </span><span class="s4">0</span><span class="s0">;</span>
+            <span class="s2">//used to find chosen ID</span>
+            <span class="s1">Scanner accID = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input account ID.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">IDinput = Integer.parseInt(accID.nextLine())</span><span class="s0">;</span>
+
+            <span class="s2">//Used to ensure user is acually user</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Please input PIN number.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">PINput = pins.get(IDinput)</span><span class="s0">;</span>
+            <span class="s2">//Shows pin for debug purposes would not be in an actual banking program</span>
+            <span class="s0">if</span><span class="s1">(debug = </span><span class="s0">true</span><span class="s1">){</span>
+                <span class="s1">System.out.println(PINput)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s1">Choice.Passwords(PINput)</span><span class="s0">;</span>
+
+            <span class="s2">//gets account name</span>
+            <span class="s1">var pName = accounts.get(IDinput)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Welcome &quot; </span><span class="s1">+ pName + </span><span class="s3">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s2">//prints out account data from ArrayLists</span>
+                <span class="s1">Choice.printArrayList(IDinput</span><span class="s0">,</span><span class="s1">accounts</span><span class="s0">,</span><span class="s1">sins</span><span class="s0">,</span><span class="s1">balances</span><span class="s0">,</span><span class="s1">pins)</span><span class="s0">;</span>
+
+                <span class="s2">//sees what user wants to do</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Would you like to 1. Change balance, 2.Change info, 3.Close account, 4.Logout&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s0">int </span><span class="s1">userChoice = Choice.Choose(</span><span class="s4">4</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s2">//CHANGE BALANCE</span>
+            <span class="s0">if</span><span class="s1">(userChoice == </span><span class="s4">1</span><span class="s1">) {</span>
+
+                <span class="s1">Choice.balanceChange(balances</span><span class="s0">, </span><span class="s1">IDinput)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+
+                <span class="s2">//CHANGE INFO</span>
+                <span class="s0">else if</span><span class="s1">(userChoice == </span><span class="s4">2</span><span class="s1">){</span>
+
+                    <span class="s1">Choice.changeArr(IDinput</span><span class="s0">,</span><span class="s1">accounts</span><span class="s0">,</span><span class="s1">sins</span><span class="s0">,</span><span class="s1">balances</span><span class="s0">,</span><span class="s1">pins)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+
+
+                <span class="s2">//CLOSE ACCOUNT</span>
+                <span class="s0">else if</span><span class="s1">(userChoice == </span><span class="s4">3</span><span class="s1">){</span>
+                    <span class="s2">//Confirms that user wants to close account</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;Are you sure? 1. Yes, 2. No&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">Scanner YN = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+                <span class="s0">int </span><span class="s1">DelConfirm = Integer.parseInt(YN.nextLine())</span><span class="s0">;</span>
+                   <span class="s0">if</span><span class="s1">(DelConfirm == </span><span class="s4">1</span><span class="s1">){</span>
+
+                    <span class="s1">Choice.removeObj(accounts</span><span class="s0">,</span><span class="s1">sins</span><span class="s0">,</span><span class="s1">balances</span><span class="s0">,</span><span class="s1">pins</span><span class="s0">,</span><span class="s1">IDinput)</span><span class="s0">;</span><span class="s1">}</span>
+                   <span class="s0">else</span><span class="s1">{}</span><span class="s0">;</span>
+            <span class="s1">}</span>
+
+                <span class="s2">//LOGOUT</span>
+                <span class="s0">else if</span><span class="s1">(userChoice == </span><span class="s4">4</span><span class="s1">){</span>
+
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Goodbye &quot; </span><span class="s1">+ pName + </span><span class="s3">&quot;.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}}</span>
+
+
+            <span class="s2">//OPEN</span>
+            <span class="s0">else if</span><span class="s1">(LO == </span><span class="s4">2</span><span class="s1">){</span>
+                <span class="s2">//Adds info to ArrayLists</span>
+                <span class="s1">Choice.addAcc(accounts</span><span class="s0">,</span><span class="s1">sins</span><span class="s0">,</span><span class="s1">balances</span><span class="s0">,</span><span class="s1">pins)</span><span class="s0">;</span>
+
+
+            <span class="s1">}</span>
+
+
+
+
+
+            <span class="s1">}</span>
+
+
+        <span class="s1">}</span>
+
+    <span class="s1">}</span>
+
+</pre>
+</body>
+</html>
